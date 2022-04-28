@@ -19,11 +19,11 @@ Ailong Ma,
 This is an official implementation LoveCS in our RSE 2022 paper.
 
 ## Highlights:
-- A Cross-Sensor Land-cOVEr framework (LoveCS) is proposed.
-- LoveCS advances cross-sensor domain adaptation.
-- LoveCS learns divergence between sensors from structure and optimization.
-- The effectiveness of LoveCS was evaluated in three cities of China.
-- High-resolution city-scale mapping can be achieved within 9 hours on one GPU.
+1. A Cross-Sensor Land-cOVEr framework (LoveCS) is proposed.
+2. LoveCS advances cross-sensor domain adaptation.
+3. LoveCS learns divergence between sensors from structure and optimization.
+4. The effectiveness of LoveCS was evaluated in three cities of China.
+5. High-resolution city-scale mapping can be achieved within 9 hours on one GPU.
 
 ### Requirements:
 - pytorch >= 1.7.0
@@ -72,3 +72,22 @@ ckpt_path='./log/sfpn.pth'
 python LoveCS_eval.py --config_path=${config_path} --ckpt_path=${ckpt_path}
 ```
 ![avatar](https://github.com/Junjue-Wang/resources/blob/main/LoveCS/overall_prcocess.png?raw=true)
+
+## Citation
+If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
+```text
+    @inproceedings{wang2021loveda,
+        title={Love{DA}: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation},
+        author={Junjue Wang and Zhuo Zheng and Ailong Ma and Xiaoyan Lu and Yanfei Zhong},
+        booktitle={Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
+        editor = {J. Vanschoren and S. Yeung},
+        year={2021},
+        volume = {1},
+        pages = {},
+        url={https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf}
+    }
+```
+The LoveCS can be used for academic purposes only,
+<font color="red"><b> and any commercial use is prohibited.</b></font>
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
+<img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
