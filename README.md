@@ -25,28 +25,29 @@ pip install git+https://github.com/qubvel/segmentation_models.pytorch
 ### 1. Flexible Cross-sensor Normalization
 Cross-sensor normalization can help you encode the source and target domain statistics 
 separately.
-You can replace the batch normalizations with cross-sensor normalizations as follows:
+
+1.You can replace the batch normalizations with cross-sensor normalizations as follows:
+
 ```python
 from module.csn import replace_bn_with_csn
 from module.semantic_fpn import SemanticFPN
-# Semantic-FPN as an example
+# Semantic-FPN (https://arxiv.org/pdf/1901.02446.pdf) as an example 
 model = SemanticFPN(dict())
 # Replace the BNs with CSNs
 model = replace_bn_with_csn(model)
 ```
 
-
-
-### Prepare Cross-Sensor Dataset
-
-```bash
-ln -s </path/to/cross_sensor> ./cross_sensor
+2.Model Forward
+```python
+from module.csn import change_csn
+model = change_csn(model, source=True)
+source_outputs = model(source_images)
+model = change_csn(model, source=False)
+target_outputs = model(target_images)
 ```
 
-### Eval LoveCS Model
-From Airborne to Spaceborne
-```bash 
-bash ./scripts/eval_lovecs.sh
-```
+### 2. LoveCS framework
+[LoveCS_train.py](https://github.com/Junjue-Wang/LoveCS/blob/master/LoveCS_train.py) is a training example and
+[LoveCS_eval.py](https://github.com/Junjue-Wang/LoveCS/blob/master/LoveCS_eval.py) is an evaluation example.
 
-
+![avatar](https://github.com/Junjue-Wang/resources/blob/main/LoveCS/overall_prcocess.png?raw=true)
