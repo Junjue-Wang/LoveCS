@@ -49,16 +49,15 @@ target_outputs = model(target_images)
 ### 2. LoveCS framework
 [LoveCS_train.py](https://github.com/Junjue-Wang/LoveCS/blob/master/LoveCS_train.py) is a training example and
 [LoveCS_eval.py](https://github.com/Junjue-Wang/LoveCS/blob/master/LoveCS_eval.py) is an evaluation example.
-You can configure your domain adaptation dataset and use the following scripts for training and evaluation.
+You can configure your domain adaptation dataset (i.e. [LoveDA](https://github.com/Junjue-Wang/LoveDA)) and use the following scripts for training and evaluation.
 ```bash
 #!/usr/bin/env bash
-export CUDA_VISIBLE_DEVICES=0
-export PYTHONPATH=$PYTHONPATH:`pwd`
 config_path='st.lovecs.2CZ.lovecs'
 python LoveCS_train.py --config_path=${config_path}
 
-export CUDA_VISIBLE_DEVICES=0
-export PYTHONPATH=$PYTHONPATH:`pwd`
-python LoveCS_eval.py
+
+config_path='st.lovecs.2CZ.lovecs'
+ckpt_path='./log/sfpn.pth'
+python LoveCS_eval.py --config_path=${config_path} --ckpt_path=${ckpt_path}
 ```
 ![avatar](https://github.com/Junjue-Wang/resources/blob/main/LoveCS/overall_prcocess.png?raw=true)

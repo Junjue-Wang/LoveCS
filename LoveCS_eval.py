@@ -5,6 +5,15 @@ from utils.tools import *
 from utils.tta import *
 from module.csn import change_csn, replace_bn_with_csn
 import numpy as np
+import argparse
+
+parser = argparse.ArgumentParser(description='Run lovecs methods.')
+
+parser.add_argument('--config_path',  type=str,
+                    help='config path', default='sfpn')
+parser.add_argument('--ckpt_path',  type=str,
+                    help='weights path', default='./log/sfpn.pth')
+args = parser.parse_args()
 
 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
@@ -50,12 +59,10 @@ def evaluate_cs(model, cfg, is_training=False, ckpt_path=None, logger=None):
 if __name__ == '__main__':
     seed_torch(2333)
     from module.semantic_fpn import SemanticFPN
-    cfg = import_config('lovecs')
+    cfg = import_config(args.config_path)
     # Semantic Segmentation model
     model = SemanticFPN(**cfg.MODEL).cuda()
     # Replace the BNs into CSNs
     model = replace_bn_with_csn(model)
-
-    ckpt_path = './log/LoveCS_2CZ.pth'
     change_csn(model, source=False)
-    evaluate_cs(model, cfg, False, ckpt_path, logger)
+    evaluate_cs(model, cfg, False, args.ckpt_path, logger)
