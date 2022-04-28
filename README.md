@@ -74,7 +74,7 @@ python LoveCS_eval.py --config_path=${config_path} --ckpt_path=${ckpt_path}
 ![avatar](https://github.com/Junjue-Wang/resources/blob/main/LoveCS/overall_prcocess.png?raw=true)
 
 ## Citation
-If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
+If you use LoveCS in your research, please cite our coming RSE 2022 paper.
 ```text
     @inproceedings{wang2021loveda,
         title={Love{DA}: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation},
@@ -87,7 +87,7 @@ If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
         url={https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf}
     }
 ```
-The LoveCS can be used for academic purposes only,
+LoveCS can be used for academic purposes only,
 <font color="red"><b> and any commercial use is prohibited.</b></font>
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
 
