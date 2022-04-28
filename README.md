@@ -90,4 +90,5 @@ If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
 The LoveCS can be used for academic purposes only,
 <font color="red"><b> and any commercial use is prohibited.</b></font>
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
+
 <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
