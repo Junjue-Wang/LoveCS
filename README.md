@@ -6,7 +6,7 @@ Ailong Ma,
 <a href="http://rsidea.whu.edu.cn/">Yanfei Zhong</a>, 
 <a href="http://zhuozheng.top/">Zhuo Zheng</a>, and Liangpei Zhang</h5>
 
-[[`Paper`](https://www.sciencedirect.com/science/article/pii/S0034425722001729#s0075)],
+[[`Paper`](https://www.researchgate.net/publication/360484883_Cross-sensor_domain_adaptation_for_high_spatial_resolution_urban_land-cover_mapping_From_airborne_to_spaceborne_imagery)],
 [[`BibTex`](https://www.sciencedirect.com/sdfe/arp/cite?pii=S0034425722001729&format=text%2Fx-bibtex&withabstract=true)],
 [[`Product`](https://pan.baidu.com/s/1YnsMFDOMBGO-oz_PAUkuFQ?pwd=2333)]
 
