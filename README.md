@@ -6,8 +6,8 @@ Ailong Ma,
 <a href="http://rsidea.whu.edu.cn/">Yanfei Zhong</a>, 
 <a href="http://zhuozheng.top/">Zhuo Zheng</a>, and Liangpei Zhang</h5>
 
-[[`Paper`](https://www.researchgate.net/profile/Junjue-Wang/publication/355390292_LoveDA_A_Remote_Sensing_Land-Cover_Dataset_for_Domain_Adaptive_Semantic_Segmentation/links/617cd8bda767a03c14cecbc9/LoveDA-A-Remote-Sensing-Land-Cover-Dataset-for-Domain-Adaptive-Semantic-Segmentation.pdf?_sg%5B0%5D=Iw5FPui1-9iYrZN7aZO766hZA-LmublHlq8bp0694vUeIGDIzp5SGTfYN-OWhurZOujSPU0RDZ5lW0i02HVUew.7x9qdrvJwRmAnsqEyh5-xSFdh0M9AaTpdXcZCfHyhVl5GNLR5nlDIx8ctTXFy1HE1yNexX4ytzYqJWkAGJVTvg.Rrg3rXhcp9mMlLTU3n9Jf-h0Kt8VzHAd0AmhG2yPQxI-yRK6J0wAulUZ65dih6BQ9CbrQm0_23_nULO_BXwaJg&_sg%5B1%5D=KLu7pn0g50f8FwKE9x5iOuDPYb8VaOpX4k_ieq8eWJVVeJyXbZJO-O4pCL687QRxYbBnWdo7fJj8FZEOc3t3lgVVyDz0CFS-ff7LToXj4R9W.7x9qdrvJwRmAnsqEyh5-xSFdh0M9AaTpdXcZCfHyhVl5GNLR5nlDIx8ctTXFy1HE1yNexX4ytzYqJWkAGJVTvg.Rrg3rXhcp9mMlLTU3n9Jf-h0Kt8VzHAd0AmhG2yPQxI-yRK6J0wAulUZ65dih6BQ9CbrQm0_23_nULO_BXwaJg&_iepl=)],
-[[`BibTex`](https://slideslive.com/38969542)],
+[[`Paper`](https://www.sciencedirect.com/science/article/pii/S0034425722001729#s0075)],
+[[`BibTex`](https://www.sciencedirect.com/sdfe/arp/cite?pii=S0034425722001729&format=text%2Fx-bibtex&withabstract=true)],
 [[`Product`](https://pan.baidu.com/s/1YnsMFDOMBGO-oz_PAUkuFQ?pwd=2333)]
 
 <div align="center">
@@ -57,6 +57,16 @@ model = change_csn(model, source=False)
 target_outputs = model(target_images)
 ```
 
+2.Model Backward
+```python
+from torch.nn import CrossEntropyLoss
+loss_cal = CrossEntropyLoss()
+src_loss = loss_cal(source_outputs, src_labels)
+tgt_loss = loss_cal(target_outputs, pse_labels)
+total_loss = tgt_loss + src_loss
+total_loss.backward()
+```
+
 ### 2. LoveCS framework
 [LoveCS_train.py](https://github.com/Junjue-Wang/LoveCS/blob/master/LoveCS_train.py) is a training example and
 [LoveCS_eval.py](https://github.com/Junjue-Wang/LoveCS/blob/master/LoveCS_eval.py) is an evaluation example.
@@ -76,15 +86,16 @@ python LoveCS_eval.py --config_path=${config_path} --ckpt_path=${ckpt_path}
 ## Citation
 If you use LoveCS in your research, please cite our coming RSE 2022 paper.
 ```text
-    @inproceedings{wang2021loveda,
-        title={Love{DA}: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation},
-        author={Junjue Wang and Zhuo Zheng and Ailong Ma and Xiaoyan Lu and Yanfei Zhong},
-        booktitle={Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
-        editor = {J. Vanschoren and S. Yeung},
-        year={2021},
-        volume = {1},
-        pages = {},
-        url={https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf}
+    @article{WANG2022113058,
+    title = {Cross-sensor domain adaptation for high spatial resolution urban land-cover mapping: From airborne to spaceborne imagery},
+    journal = {Remote Sensing of Environment},
+    volume = {277},
+    pages = {113058},
+    year = {2022},
+    issn = {0034-4257},
+    doi = {https://doi.org/10.1016/j.rse.2022.113058},
+    url = {https://www.sciencedirect.com/science/article/pii/S0034425722001729},
+    author = {Junjue Wang and Ailong Ma and Yanfei Zhong and Zhuo Zheng and Liangpei Zhang},
     }
 ```
 LoveCS can be used for academic purposes only,
