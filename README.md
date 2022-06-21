@@ -17,6 +17,7 @@ Ailong Ma,
 ---------------------
 
 This is an official implementation LoveCS in our RSE 2022 paper.
+The referenced methods in this paper can be found in our [LoveDA](https://github.com/Junjue-Wang/LoveDA) repo.
 
 ## Highlights:
 1. A Cross-Sensor Land-cOVEr framework (LoveCS) is proposed.
