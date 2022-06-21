@@ -84,7 +84,7 @@ python LoveCS_eval.py --config_path=${config_path} --ckpt_path=${ckpt_path}
 ![avatar](https://github.com/Junjue-Wang/resources/blob/main/LoveCS/overall_prcocess.png?raw=true)
 
 ## Citation
-If you use LoveCS in your research, please cite our coming RSE 2022 paper.
+If you use LoveCS in your research, please cite our RSE 2022 paper.
 ```text
     @article{WANG2022113058,
     title = {Cross-sensor domain adaptation for high spatial resolution urban land-cover mapping: From airborne to spaceborne imagery},
