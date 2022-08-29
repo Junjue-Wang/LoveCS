@@ -30,7 +30,7 @@ The referenced methods in this paper can be found in our [LoveDA](https://github
 - pytorch >= 1.7.0
 - python >=3.6
 ```bash
-pip install --upgrade git+https://gitee.com/zhuozheng/ever_lite.git@v1.4.5
+pip install --upgrade git+https://github.com/Z-Zheng/ever
 pip install git+https://github.com/qubvel/segmentation_models.pytorch
 ```
 

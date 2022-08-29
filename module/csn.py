@@ -391,8 +391,8 @@ def replace_bn_with_csn(module:nn.Module, affine_tar=False):
         module_output = CSNorm2d(module.num_features, module.eps, module.momentum, module.affine, affine_tar=affine_tar)
         if module.affine:
             with torch.no_grad():
-                module_output.weight_source = module.weight.data.clone().detach()
-                module_output.bias_source = module.bias.data.clone().detach()
+                module_output.weight_source.data = module.weight.data.clone().detach()
+                module_output.bias_source.data = module.bias.data.clone().detach()
         if affine_tar:
             with torch.no_grad():
                 module_output.weight_target.data = module.weight.data.clone().detach()
