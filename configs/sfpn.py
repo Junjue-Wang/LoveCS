@@ -1,5 +1,5 @@
 from configs.data import SOURCE_DATA_CONFIG,TARGET_DATA_CONFIG, EVAL_DATA_CONFIG, TARGET_SET, NUM_CLASSES
-from ever.magic.transform.segm import Scale
+from utils.tta import Scale
 
 MODEL = dict(
     encoder=dict(
